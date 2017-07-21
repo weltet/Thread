@@ -1,0 +1,31 @@
+import javax.swing.JOptionPane;
+
+class CountDown extends Thread{
+	public void run() {
+		for(int i=10;i>0;i--) {
+			System.out.println(i);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println("fail");
+			System.exit(0);
+		}
+	}
+}
+
+public class ExamC {
+	public static void main(String[] args) {
+		new CountDown().start();
+		
+		String msg = JOptionPane.showInputDialog("Education is a method whereby one acquires a higher grade of prejudices.");
+		System.out.println(msg);
+		
+		if(msg.equals("Education is a method whereby one acquires a higher grade of prejudices."))
+			System.out.println("success");
+		else { 
+			System.out.println("fail");
+		}
+	}
+}
