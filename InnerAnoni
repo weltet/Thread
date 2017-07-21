@@ -1,0 +1,33 @@
+public class ExamB {
+	
+	public int target=0;
+	
+	public ExamB() {
+		
+		
+		new Thread() {
+			public void run() {
+				while(true) {
+					target++;
+				}
+			}
+		}.start();//inner class
+		
+		new Thread() {
+			public void run() {
+				while(true) {
+					target--;
+				}
+			}
+		}.start();
+		
+		while(true) {
+			System.out.println(target);
+		}
+	}
+	
+	public static void main(String[] args) {
+		new ExamB();
+	}
+	
+}
