@@ -1,0 +1,38 @@
+public class ExamB {
+	
+	public int target=0;
+	
+	public ExamB() {
+		
+		
+		Thread plusThread = new Thread() {
+			public void run() {
+				while(true) {
+					target++;
+				}
+			}
+		};//inner class
+		
+		Thread minusThread = new Thread() {
+			public void run() {
+				while(true) {
+					target--;
+				}
+			}
+		};
+		
+		plusThread.start();
+		minusThread.start();
+		
+		while(true) {
+			System.out.println(target);
+		}
+	}
+	
+	public static void main(String[] args) {
+		new ExamB();
+		
+		
+	}
+	
+}
